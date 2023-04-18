@@ -1,4 +1,5 @@
 ﻿#include "tasks.h"
+#include "string";
 
 /*	Task 02. Ordering Numbers [упорядочивание чисел]
  *
@@ -21,6 +22,8 @@
  *	[output 3]: 4 7 7
  */
 
-string task02(int a, int b, int c) {	
-	return "a b c";
+string task02(int a, int b, int c) {
+	int maxx = max(max(a, b), c);
+	int minx = min(min(a, b), c);
+	return to_string(minx) + " " + to_string(a + b + c - minx - maxx) + " " + to_string(maxx);
 }
