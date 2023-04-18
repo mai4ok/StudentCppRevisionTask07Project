@@ -37,6 +37,22 @@
  *	[output 6]: -1
  */
 
-int task01(int n, int m, int x, int y) {	
-	return -1;
+int task01(int n, int m, int x, int y) {
+	if (m > n) {
+		int t;
+		t = m;
+		m = n;
+		n = t;
+	}
+	if (n <= 0 || m <= 0 || x < 0 || y < 0 || y > n || x > m) {
+		return -1;
+	}
+
+	int x1 = n - y;
+	int y1 = m - x;
+	x = x1 < x ? x1 : x;
+	y = y1 < y ? y1 : y;
+	int min = x < y ? x : y;
+
+	return min;
 }
